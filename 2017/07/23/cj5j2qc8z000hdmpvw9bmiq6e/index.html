@@ -6,17 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://白帽黑客.com">
-  <title>Tag: 工具 | 白帽黑客</title>
+  <title>谁动了我的工控？（上） | 白帽黑客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="专注信息安全事件响应，应用开发。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="白帽黑客">
-<meta property="og:url" content="http://白帽黑客.com/tags/工具/index.html">
+  <meta name="description" content="2011年前，人们说，谁管你那些安全？2011年后，人们惊呼：救命，震网来了。之后，资本家说成本太高，于是拒绝改善产品安全。  本文是作者观看美国Black Hat大会上面arnaudsoullie做的报告的一些感受和分享，在此对演讲者表示感谢，需要提问请联系我的Twitter。如果对于问题的看法存在的欠缺欢迎指正。   写在前面  尽管工业正在飞速发展，但是ICS Security却好像是一门">
+<meta name="keywords" content="工控安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谁动了我的工控？（上）">
+<meta property="og:url" content="http://白帽黑客.com/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/index.html">
 <meta property="og:site_name" content="白帽黑客">
-<meta property="og:description" content="专注信息安全事件响应，应用开发。">
+<meta property="og:description" content="2011年前，人们说，谁管你那些安全？2011年后，人们惊呼：救命，震网来了。之后，资本家说成本太高，于是拒绝改善产品安全。  本文是作者观看美国Black Hat大会上面arnaudsoullie做的报告的一些感受和分享，在此对演讲者表示感谢，需要提问请联系我的Twitter。如果对于问题的看法存在的欠缺欢迎指正。   写在前面  尽管工业正在飞速发展，但是ICS Security却好像是一门">
+<meta property="og:image" content="http://xn--ubt93ddw8a610b.com/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/71649939aee02219.jpg">
+<meta property="og:image" content="http://xn--ubt93ddw8a610b.com/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/-49d805437d7f07e4.png">
+<meta property="og:image" content="http://xn--ubt93ddw8a610b.com/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/6585c173f4c3cd93.png">
+<meta property="og:image" content="http://xn--ubt93ddw8a610b.com/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/7d398c905ccafe9.png">
+<meta property="og:image" content="http://xn--ubt93ddw8a610b.com/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/-35151e4fe095ff36.png">
+<meta property="og:image" content="http://xn--ubt93ddw8a610b.com/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/20170723_233725.jpg">
+<meta property="og:image" content="http://xn--ubt93ddw8a610b.com/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/20170724_161626.png">
+<meta property="og:updated_time" content="2017-07-24T08:26:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="白帽黑客">
-<meta name="twitter:description" content="专注信息安全事件响应，应用开发。">
+<meta name="twitter:title" content="谁动了我的工控？（上）">
+<meta name="twitter:description" content="2011年前，人们说，谁管你那些安全？2011年后，人们惊呼：救命，震网来了。之后，资本家说成本太高，于是拒绝改善产品安全。  本文是作者观看美国Black Hat大会上面arnaudsoullie做的报告的一些感受和分享，在此对演讲者表示感谢，需要提问请联系我的Twitter。如果对于问题的看法存在的欠缺欢迎指正。   写在前面  尽管工业正在飞速发展，但是ICS Security却好像是一门">
+<meta name="twitter:image" content="http://xn--ubt93ddw8a610b.com/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/71649939aee02219.jpg">
   
     <link rel="alternative" href="/atom.xml" title="白帽黑客" type="application/atom+xml">
   
@@ -150,68 +160,207 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-谁动了我的工控？（上）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/10/cj5j2qc8o0007dmpvdwt8gd86/" class="archive-article-date">
-  	<time datetime="2017-06-10T04:15:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/10/cj5j2qc8o0007dmpvdwt8gd86/">Sensitive Buster目录扫描工具</a>
+    <h1 class="article-title" itemprop="name">
+      谁动了我的工控？（上）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/" class="archive-article-date">
+  	<time datetime="2017-07-23T12:19:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>2011年前，人们说，谁管你那些安全？2011年后，人们惊呼：救命，震网来了。之后，资本家说成本太高，于是拒绝改善产品安全。</p>
+</blockquote>
+<h6 id="本文是作者观看美国Black-Hat大会上面arnaudsoullie做的报告的一些感受和分享，在此对演讲者表示感谢，需要提问请联系我的Twitter。如果对于问题的看法存在的欠缺欢迎指正。"><a href="#本文是作者观看美国Black-Hat大会上面arnaudsoullie做的报告的一些感受和分享，在此对演讲者表示感谢，需要提问请联系我的Twitter。如果对于问题的看法存在的欠缺欢迎指正。" class="headerlink" title="本文是作者观看美国Black Hat大会上面arnaudsoullie做的报告的一些感受和分享，在此对演讲者表示感谢，需要提问请联系我的Twitter。如果对于问题的看法存在的欠缺欢迎指正。"></a>本文是作者观看美国Black Hat大会上面arnaudsoullie做的报告的一些感受和分享，在此对演讲者表示感谢，需要提问请联系我的Twitter。如果对于问题的看法存在的欠缺欢迎指正。</h6><hr>
+<img src="/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/71649939aee02219.jpg" alt="71649939aee02219.jpg" title="">
+<ol>
+<li>写在前面</li>
+</ol>
+<p>尽管工业正在飞速发展，但是ICS Security却好像是一门新兴专业，Stuxnet和Sand worm的断电事件都让我们比以往更加重视这门专业。</p>
+<p>本文章意在浅显地揭示一些简单的修改工控设备数据和获取信息的方法，在真实环境里面可能会遭遇到IDS Sensor和一些安全措施。鉴于目前法律规定和工控被黑导致的严重后果，我们警告读者，千万不要随便尝试，否则导致的巨大经济损失和其他任何后果我们不负责任。</p>
+<p>2.工控协议目前状况</p>
+<p>目前主要采用S7和Modbus协议，从整个ipv4空间来看，连接公网的设备数以万计，协议本身并不安全，而产品自带的FTP和HTTP管理通常可由弱口令进入。使用这些协议的设备有：摄像头，PLC等等。让我们担忧的是，协议本身不带有安全的认证，甚至本身可以通过一些厂家带有的未知的功能编号来下载固件。</p>
+<p>3.我怎么找到他们</p>
+<p>我们建议的是从在线的互联网搜索引擎来获取，这里推荐使用<a href="https://fofa.so/" target="_blank" rel="external">FOFA Pro</a>来搜索，因为Fofa已经支持对S7协议和Modbus协议的搜索，而结果比较全面。已知的S7协议常用端口是102，而Modbus协议监听502端口。</p>
+<p>我们打开Fofa，输入关键词：</p>
+<blockquote>
+<p>port=502 &amp;&amp; protocol=modbus</p>
+</blockquote>
+<p>普通视角：</p>
+<img src="/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/-49d805437d7f07e4.png" alt="-49d805437d7f07e4.png" title="">
+<p>全球视角：</p>
+<img src="/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/6585c173f4c3cd93.png" alt="6585c173f4c3cd93.png" title="">
+<p>即可发现很多开放的主机，通过过滤，我们发现了一台昨天系统扫描出的主机带有502端口开放，且Fofa给出的Banner信息中带有Device VendorName: S* Electric，这是一家非常常见的厂家生产的设备，我们决定对此进行测试。</p>
+<p>同时推荐大家也可以搜索相关的型号，比如S*生产的型号：</p>
+<blockquote>
+<p>m340 &amp;&amp; type=”service”</p>
+</blockquote>
+<p>普通视角：</p>
+<img src="/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/7d398c905ccafe9.png" alt="7d398c905ccafe9.png" title="">
+<p>全球视角：</p>
+<img src="/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/-35151e4fe095ff36.png" alt="-35151e4fe095ff36.png" title="">
+<p>如果自己手动扫描的话，我们警告不要使用nmap工具的默认扫描选项。你将扫描的是一个非常脆弱的设备，在很多安全检测中，客户都会严厉禁止这种行为。</p>
+<p>所以我们推荐使用TCP扫描，并且每次只扫描一个端口，相信大家不希望雇主公司把电话打爆和导致不必要的损失。一些专业的扫描软件是极为推荐的，比如接下来会演示的plcscan。</p>
+<p>4.让我们开始</p>
+<p>我们通过搜索m340发现了一些设备，文章用ics.fofa代替他们的IP地址。</p>
+<p>我们点击目标的IP，Fofa会给出目标主机开放的端口，通常我们可以发现FTP，HTTP，Modbus等协议。这里对Modbus开放的端口进行研究，其他协议我们提示大家可以通过弱口令进入。</p>
+<p>这里介绍几个概念，Modbus设备会有Register和Coil来存放数据，这些均可以通过Modbus协议来读取和写入。Coil的值仅有0和1的区别，他们可以直接控制电路的开关。因为PLC是可以编程的，所以直接控制Coil并不能预料到发生什么，而Modbus的TCP框架格式和固件分析将在下一篇文章概述。</p>
+<p>我们运行plcscan：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python plcscan.py ics.fofa</div></pre></td></tr></table></figure>
+<p>得到的输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Scan start...</div><div class="line">ics.fofa:502 Modbus/TCP</div><div class="line">  Unit ID: 0</div><div class="line">    Device: S* Electric   BMX P34 2020 v2.6</div><div class="line">  Unit ID: 255</div><div class="line">    Device: S* Electric   BMX P34 2020 v2.6</div><div class="line">Scan complete</div></pre></td></tr></table></figure>
+<p>这些即为设备的厂商和硬件的编号，既然已经知道了开放了Modbus，我们直接开始读写数据。</p>
+<p>5.读写Modbus设备的信息</p>
+<p>我们通过mbtget工具来读写，同时Metasploit也有相应的模块。</p>
+<p>执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mbtget -r3 -a 1 -n 10 ics.fofa</div></pre></td></tr></table></figure></p>
+<p>我们即可读入从1开始的10个Coil的值，从帮助文件中，我们知道读Register的值使用-r4，读取Register的输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">values:</div><div class="line">  1 (ad 00001):  2740</div><div class="line">  2 (ad 00002):  1715</div><div class="line">  3 (ad 00003):     0</div><div class="line">  4 (ad 00004):     0</div><div class="line">  5 (ad 00005):     0</div><div class="line">  6 (ad 00006):     0</div><div class="line">  7 (ad 00007):     0</div><div class="line">  8 (ad 00008):     0</div><div class="line">  9 (ad 00009):     0</div><div class="line"> 10 (ad 00010):     0</div></pre></td></tr></table></figure>
+<p>而写入相应的数据，我们使用-w5和-w6命令，数字先后对应之前的-r选项。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mbtget -w6 666 -a 666 ics.fofa</div></pre></td></tr></table></figure>
+<p>如果提示word write ok，即为写入成功，设备的状态会在数毫秒内更新。</p>
+<p>6.本地实践</p>
+<p>这里建议大家本地搭建实验环境来实践，Modbus Pal是由java编写的模拟器，支持添加数个终端。从网上下载后用Java打开，添加一个Slave，并将Register和Coil均添加65535个后用表格的方式任意编辑上面的数据。</p>
+<img src="/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/20170723_233725.jpg" alt="20170723_233725.jpg" title="">
+<p>通过Mbtget和Metasploit的modbusclient模块均可完成写入和读出（MSF的模块编号从0开始，而其他从1开始，需要注意）。</p>
+<p>感兴趣的可以动手分析他的协议哦，Wireshark支持对Modbus的过滤。</p>
+<p>7.结语</p>
+<img src="/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/20170724_161626.png" alt="20170724_161626.png" title="">
+<p>我们稍微用心不难发现太多的设备运行着不安全的协议，这些协议在上个世纪被设计并且保证设备之间的控制和数据的正常收集，他们真的适合21世纪么？</p>
+<p>一台设备价值数万，而安全措施更是需要能够保障他们的正常运行。企业应该注意在关键设备运行的网段设立IDS和划分vlan，如果仅认为可以通过封闭的网络来拒绝外部的渗透是明显不够的。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Github</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Fuzzer</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工控安全</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://白帽黑客.com/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/07/24/cj5j2qc8g0004dmpve33l8sor/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ICS默认密码字典
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/07/17/cj5j2qc7u0000dmpvq7sar0bw/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">445端口全球总览及稳定评论服务寻求</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://白帽黑客.com/2017/07/23/cj5j2qc8z000hdmpvw9bmiq6e/", 
+    sourceId: "谁动了我的工控？（上）",
+    productKey: "2e0d3fa02910466bbaad7b1f8c7816c3",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -231,9 +380,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
